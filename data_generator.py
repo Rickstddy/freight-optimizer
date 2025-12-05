@@ -24,7 +24,7 @@ def generate_shipping_data(num_records=1000):
             'date': date,
             'carrier': carrier,
             'route': route,
-            'price_eur': int(price),
+            'price_eur': round(float(price), 2)
             'transit_days': transit_days,
             'on_time_pct': on_time_pct
         })
@@ -38,7 +38,7 @@ def find_cheapest_carrier(df):
 
 if __name__ == '__main__':
     print("🚢 Generiere Daten...")
-    df = generate_shipping_data(1000)
+    df = generate_shipping_data(150000)
     
     print("\n📊 ERSTE 10 DATENSÄTZE:")
     print(df.head(10))
